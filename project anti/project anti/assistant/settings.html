@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings - MediCare Clinic</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assistant.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <nav class="sidebar border-end border-secondary border-opacity-25">
+        <div class="sidebar-header d-flex align-items-center mb-4 pb-3 border-bottom border-secondary border-opacity-25">
+            <div class="clinic-logo-box me-3">
+                <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+            <div>
+                <h5 class="mb-0 text-white fw-bold">MediCare Clinic</h5>
+                <small class="text-info opacity-75">Assistant Portal</small>
+            </div>
+        </div>
+
+        <ul class="nav flex-column mb-auto">
+            <li class="nav-item mb-2">
+                <a href="index.html" class="nav-link text-white-50 px-3">
+                    <i class="fa-solid fa-house me-3 w-20px text-center"></i>
+                    HOME
+                </a>
+            </li>
+            <li class="nav-item mb-2">
+                <a href="login.html" class="nav-link text-white-50 px-3">
+                    <i class="fa-regular fa-user me-3 w-20px text-center"></i>
+                    LOG IN
+                </a>
+            </li>
+
+
+            <li class="nav-item mb-2">
+                <div class="text-uppercase text-secondary small fw-bold px-3 mb-2" style="font-size: 0.7rem; letter-spacing: 1px;">Assistant Menu</div>
+                <a href="dashboard.html" class="nav-link text-white-50 px-3 d-flex align-items-center mb-2" style="transition: all 0.3s;">
+                    <i class="fa-solid fa-border-none me-3 w-20px text-center"></i>
+                    Main Dashboard
+                </a>
+                <a href="patient.html" class="nav-link text-white-50 px-3 d-flex align-items-center mb-2" style="transition: all 0.3s;">
+                    <i class="fa-solid fa-user-group me-3 w-20px text-center"></i>
+                    Patients Management
+                </a>
+                <a href="visits.html" class="nav-link text-white-50 px-3 d-flex align-items-center mb-2" style="transition: all 0.3s;">
+                    <i class="fa-regular fa-calendar-check me-3 w-20px text-center"></i>
+                    Visits Management
+                </a>
+                <a href="settings.html" class="nav-link active text-dark bg-info rounded-3 px-3 fw-medium d-flex align-items-center">
+                    <i class="fa-solid fa-gear me-3 w-20px text-center"></i>
+                    Account Settings
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="top-header d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h2 class="h4 text-white fw-bold mb-1">ASSISTANT PANEL</h2>
+                <div class="text-white-50 small">Sara Mohamed &bull; Medical Assistant</div>
+            </div>
+            <div class="header-actions d-flex align-items-center gap-3">
+                <div class="weather-widget rounded-pill px-3 py-2 border border-secondary border-opacity-50 text-white-50 d-flex align-items-center gap-2 small">
+                    <i class="fa-solid fa-cloud"></i>
+                    <span>23&deg;C</span>
+                </div>
+                <button class="lang-btn btn btn-outline-secondary rounded-pill text-white py-1 px-3 d-flex align-items-center gap-2 border-opacity-50">
+                    <i class="fa-solid fa-globe"></i>
+                    <span>عربي</span>
+                </button>
+                <a href="settings.html" class="profile-avatar text-decoration-none bg-info text-dark rounded-circle fw-bold d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; font-size: 1.1rem;">
+                    S
+                </a>
+            </div>
+        </header>
+
+        <!-- Dynamic Content Area -->
+        <div class="content-wrapper">
+            <div class="row g-4">
+
+                <!-- Change Password Card -->
+                <div class="col-lg-6">
+                    <div class="bg-card w-100 h-100 p-4 rounded-4">
+                        <h5 class="text-white fw-semibold mb-4">
+                            <i class="fa-solid fa-lock me-2 text-info"></i> Change Password
+                        </h5>
+
+                        <form>
+                            <div class="mb-4">
+                                <label class="form-label text-white-50 small">Current Password</label>
+                                <input type="password" class="form-control bg-dark border border-secondary border-opacity-25 text-white py-3 px-3" value="••••••••" style="background-color: #0d1e3a !important;">
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label text-white-50 small">New Password</label>
+                                <input type="password" class="form-control bg-dark border border-secondary border-opacity-25 text-white py-3 px-3" value="••••••••" style="background-color: #0d1e3a !important;">
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label text-white-50 small">Confirm New Password</label>
+                                <input type="password" class="form-control bg-dark border border-secondary border-opacity-25 text-white py-3 px-3" value="••••••••" style="background-color: #0d1e3a !important;">
+                            </div>
+
+                            <button type="button" class="btn btn-info w-100 rounded-3 py-3 fw-medium text-dark action-btn">Update Password</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- My Profile Card -->
+                <div class="col-lg-6">
+                    <div class="bg-card w-100 h-100 p-4 rounded-4">
+
+                        <!-- Profile Info -->
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="bg-info text-dark rounded-circle fw-bold d-flex align-items-center justify-content-center me-3" style="width: 55px; height: 55px; font-size: 1.4rem;">
+                                S
+                            </div>
+                            <div>
+                                <h6 class="text-white fw-semibold mb-0">Sara Mohamed</h6>
+                                <small class="text-info">Medical Assistant</small>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="mb-3 p-3 rounded-3 border border-secondary border-opacity-25" style="background-color: #0d1e3a;">
+                            <small class="text-white-50 d-block mb-1">Email</small>
+                            <span class="text-white fw-medium">sara.mohamed@medicare.com</span>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="mb-3 p-3 rounded-3 border border-secondary border-opacity-25" style="background-color: #0d1e3a;">
+                            <small class="text-white-50 d-block mb-1">Phone</small>
+                            <span class="text-white fw-medium">+966 50 987 6543</span>
+                        </div>
+
+                        <!-- Role -->
+                        <div class="mb-3 p-3 rounded-3 border border-secondary border-opacity-25" style="background-color: #0d1e3a;">
+                            <small class="text-white-50 d-block mb-1">Role</small>
+                            <span class="text-white fw-medium">Medical Assistant</span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assistant.js"></script>
+</body>
+</html>

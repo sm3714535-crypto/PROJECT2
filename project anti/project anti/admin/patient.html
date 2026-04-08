@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patients & Visits - MediCare Clinic</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Global Custom CSS -->
+    <link rel="stylesheet" href="../style.css">
+    <!-- Dashboard Specific CSS -->
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+                        <div class="sidebar">
+            <div class="sidebar-brand d-flex align-items-center mb-4 pb-3 border-bottom border-secondary border-opacity-25">
+                <div class="clinic-logo-box me-2"><i class="fa-solid fa-heart-pulse"></i></div>
+                <div><h5 class="mb-0 text-white fw-bold">MediCare Clinic</h5><small class="text-white-50 opacity-75">Admin Panel</small></div>
+            </div>
+            <a href="../index.html" class="sidebar-link"><i class="fa-solid fa-desktop"></i> HOME</a>
+            <a href="login.html" class="sidebar-link"><i class="fa-solid fa-right-to-bracket"></i> LOG IN</a>
+            <div class="nav-title">ADMIN MENU</div>
+            <a href="dashboard.html" class="sidebar-link"><i class="fa-solid fa-chart-pie"></i> Admin Dashboard</a>
+            <a href="staff.html" class="sidebar-link"><i class="fa-solid fa-user-doctor"></i> Staff Management</a>
+            <a href="serv_spec.html" class="sidebar-link"><i class="fa-solid fa-hand-holding-medical"></i> Services & Specialties</a>
+            <a href="patient.html" class="sidebar-link active"><i class="fa-solid fa-hospital-user"></i> Patients & Visits</a>
+            <a href="financ.html" class="sidebar-link"><i class="fa-solid fa-money-bill-trend-up"></i> Financial Management</a>
+            <a href="system.html" class="sidebar-link"><i class="fa-solid fa-gears"></i> System Settings</a>
+        </div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="dashboard-header d-flex justify-content-between align-items-center mb-5">
+                <div class="header-title">
+                    <h2 class="h4 text-white fw-bold mb-1">PATIENTS & VISITS</h2>
+                    <p class="text-white-50 small mb-0">Clinic-wide patient activity & history</p>
+                </div>
+                <div class="header-actions d-flex align-items-center gap-3">
+                    <div class="action-item"><i class="fa-solid fa-cloud-sun me-2"></i> 23°C</div>
+                    <div class="action-item"><i class="fa-solid fa-globe me-2"></i> عربي</div>
+                    <a href="system.html" class="avatar text-decoration-none text-white fw-bold">A</a>
+                </div>
+            </header>
+
+            <!-- Hub Tiles Grid (2 Large Tiles) -->
+            <div class="d-flex justify-content-center align-items-center mb-5" style="padding: 40px 0;">
+                <div class="finance-tiles-grid fade-up" style="display: flex; gap: 30px; justify-content: center; width: 100%; max-width: 900px;">
+                    <a href="patients-list.html" class="finance-tile" style="width: 380px; height: 280px; flex-direction: column;">
+                        <i class="fa-solid fa-hospital-user" style="font-size: 3.5rem; margin-bottom: 25px;"></i>
+                        <span style="font-size: 1.4rem; letter-spacing: 1px;">Patients</span>
+                    </a>
+                    <a href="visits.html" class="finance-tile" style="width: 380px; height: 280px; flex-direction: column;">
+                        <i class="fa-solid fa-stethoscope" style="font-size: 3.5rem; margin-bottom: 25px;"></i>
+                        <span style="font-size: 1.4rem; letter-spacing: 1px;">Visits</span>
+                    </a>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

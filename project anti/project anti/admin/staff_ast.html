@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assistant Management - MediCare Clinic</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <!-- Unified Sidebar (Synced) -->
+                        <div class="sidebar">
+            <div class="sidebar-brand d-flex align-items-center mb-4 pb-3 border-bottom border-secondary border-opacity-25">
+                <div class="clinic-logo-box me-2"><i class="fa-solid fa-heart-pulse"></i></div>
+                <div><h5 class="mb-0 text-white fw-bold">MediCare Clinic</h5><small class="text-white-50 opacity-75">Admin Panel</small></div>
+            </div>
+            <a href="../index.html" class="sidebar-link"><i class="fa-solid fa-desktop"></i> HOME</a>
+            <a href="login.html" class="sidebar-link"><i class="fa-solid fa-right-to-bracket"></i> LOG IN</a>
+            <div class="nav-title">ADMIN MENU</div>
+            <a href="dashboard.html" class="sidebar-link"><i class="fa-solid fa-chart-pie"></i> Admin Dashboard</a>
+            <a href="staff.html" class="sidebar-link active"><i class="fa-solid fa-user-doctor"></i> Staff Management</a>
+            <a href="serv_spec.html" class="sidebar-link"><i class="fa-solid fa-hand-holding-medical"></i> Services & Specialties</a>
+            <a href="patient.html" class="sidebar-link"><i class="fa-solid fa-hospital-user"></i> Patients & Visits</a>
+            <a href="financ.html" class="sidebar-link"><i class="fa-solid fa-money-bill-trend-up"></i> Financial Management</a>
+            <a href="system.html" class="sidebar-link"><i class="fa-solid fa-gears"></i> System Settings</a>
+        </div>
+
+        <!-- Main Content Wrapper (Synced) -->
+        <div class="main-content text-white">
+            <!-- Premium Header (Synced) -->
+            <div class="dashboard-header fade-up align-items-center mb-5">
+                <div class="header-title">
+                    <h4 class="fw-800 text-white text-uppercase ls-2">Assistant Management</h4>
+                    <p class="text-secondary mb-0">Clinic Operations: Support Registration & Shift Tracking</p>
+                </div>
+                <div class="header-actions">
+                    <a href="staff.html" class="action-item glass-card rounded-pill text-decoration-none">
+                        <i class="fa-solid fa-arrow-left text-cyan"></i>
+                        <span>Exit Hub</span>
+                    </a>
+                    <div class="avatar shadow-sm">M</div>
+                </div>
+            </div>
+
+            <!-- 1. Registration Section -->
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-12">
+                    <div class="dash-card border-start border-info border-4 fade-up">
+                        <h5 class="text-white fw-800 mb-4 d-flex align-items-center">
+                            <i class="fa-solid fa-user-plus me-3 text-info"></i> Register New Assistant
+                        </h5>
+                        <form id="astForm">
+                            <div class="row g-4 mb-4">
+                                <div class="col-md-2">
+                                    <label class="smaller text-muted text-uppercase fw-800 mb-2 d-block">Full Name</label>
+                                    <input type="text" id="astN" class="form-control custom-input py-2 px-3" placeholder="Sara Mohamed" required>
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="smaller text-muted text-uppercase fw-800 mb-2 d-block">Portal Username</label>
+                                    <input type="text" id="astU" class="form-control custom-input py-2 px-3" placeholder="@asst_sara" required>
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="smaller text-muted text-uppercase fw-800 mb-2 d-block">Password</label>
+                                    <input type="password" id="astP" class="form-control custom-input py-2 px-3" placeholder="••••••••" required>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="smaller text-muted text-uppercase fw-800 mb-2 d-block">Department</label>
+                                    <select id="astD" class="form-select custom-input py-2 px-3">
+                                        <option selected>Main Reception</option>
+                                        <option>Emergency Wing</option>
+                                        <option>Laboratory</option>
+                                        <option>Pharmacy</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="smaller text-muted text-uppercase fw-800 mb-2 d-block">Work Shift</label>
+                                    <select id="astS" class="form-select custom-input py-2 px-3">
+                                        <option value="Morning">Morning (8 AM - 4 PM)</option>
+                                        <option value="Evening">Evening (4 PM - 12 AM)</option>
+                                        <option value="Night">Night (12 AM - 8 AM)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-end mt-2">
+                                <button type="submit" class="btn border border-info text-info px-5 py-2 fw-800 rounded-pill dark-btn hover-bg-info">Register Personnel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Directory Section -->
+            <div class="row justify-content-center pb-5">
+                <div class="col-lg-12">
+                    <div class="dash-card fade-up delay-1 p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-4 pb-2 border-bottom border-secondary border-opacity-10">
+                            <h5 class="text-white fw-800 mb-0"><i class="fa-solid fa-id-card-clip text-cyan me-2"></i> ASSISTANT DIRECTORY</h5>
+                            <div class="badge bg-cyan bg-opacity-10 text-cyan rounded-pill px-3 py-1 fw-800" style="font-size: 0.65rem;">System Records: Live</div>
+                        </div>
+
+                        <div class="filter-panel d-flex justify-content-between align-items-center mb-4 p-4 rounded-4" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);">
+                            <div class="d-flex align-items-center gap-3">
+                                <label class="smaller text-muted text-uppercase fw-800 ls-1">Live Search</label>
+                                <div class="input-group" style="width: 300px;">
+                                    <span class="input-group-text bg-transparent border-secondary border-opacity-20 text-muted border-end-0 rounded-start-pill ps-3"><i class="fa-solid fa-magnifying-glass scale-90"></i></span>
+                                    <input type="text" id="astSearch" class="form-control custom-input border-start-0 rounded-end-pill py-2" placeholder="Search name, dept, or username..." onkeyup="refreshList()">
+                                </div>
+                            </div>
+                            <button class="btn btn-outline-secondary btn-sm px-4 rounded-pill border-opacity-20 text-white-50" onclick="document.getElementById('astSearch').value=''; refreshList();">RESET</button>
+                        </div>
+
+                        <div class="table-responsive custom-scrollbar" style="max-height: calc(100vh - 500px);">
+                            <table class="table table-dark table-hover border-secondary border-opacity-10 align-middle">
+                                <thead class="text-white-50 small letter-spacing-1 border-bottom border-secondary border-opacity-25">
+                                    <tr>
+                                        <th class="py-3 px-3 fw-normal">ASSISTANT / STAFF</th>
+                                        <th class="py-3 px-3 fw-normal">PORTAL ACCESS ID</th>
+                                        <th class="py-3 px-3 fw-normal">DEPARTMENT</th>
+                                        <th class="py-3 px-3 fw-normal">SHIFT PERIOD</th>
+                                        <th class="py-3 px-3 fw-normal">STATUS</th>
+                                        <th class="py-3 px-3 fw-normal text-end pe-4">ACTION</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="astListBody" class="small">
+                                    <!-- Dynamic Rows -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="toast" class="toast-glow"></div>
+        </div>
+    </div>
+
+    <script>
+        let assistants = JSON.parse(localStorage.getItem('mc_clinic_assistants')) || [
+            { id: 201, name: 'Sara Mohamed', user: '@asst_sara', dept: 'Main Reception', shift: 'Morning', status: 'On Duty' },
+            { id: 202, name: 'Ahmed Ali', user: '@asst_ahmed', dept: 'Laboratory', shift: 'Evening', status: 'Off Duty' }
+        ];
+
+        function showGlow(m) { const t=document.getElementById('toast'); t.innerText=m; t.style.display='block'; setTimeout(()=>t.style.display='none', 2000); }
+        
+        function refreshList() {
+            const body = document.getElementById('astListBody');
+            const search = document.getElementById('astSearch').value.toLowerCase();
+            const filtered = assistants.filter(a => a.name.toLowerCase().includes(search) || a.dept.toLowerCase().includes(search) || a.user.toLowerCase().includes(search));
+            
+            body.innerHTML = filtered.length ? '' : '<tr><td colspan="6" class="text-center py-5 opacity-25">No personnel matched your search</td></tr>';
+            
+            filtered.forEach(a => {
+                const shiftColor = a.shift === 'Morning' ? 'text-info' : (a.shift === 'Evening' ? 'text-warning' : 'text-primary');
+                body.innerHTML += `
+                    <tr>
+                        <td class="px-3">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="avatar shadow-sm small" style="width: 30px; height: 30px; font-size: 0.7rem; background: rgba(45, 212, 191, 0.1); color: var(--cyan-accent);">${a.name.charAt(0)}</div>
+                                <div class="text-white fw-bold">${a.name}</div>
+                            </div>
+                        </td>
+                        <td class="px-3 text-white-50 font-monospace" style="font-size: 0.75rem;">${a.user}</td>
+                        <td class="px-3">
+                            <span class="badge bg-secondary bg-opacity-20 text-info fw-normal rounded-pill px-2" style="font-size: 0.65rem;">${a.dept}</span>
+                        </td>
+                        <td class="px-3">
+                            <div class="d-flex align-items-center gap-2">
+                                <i class="fa-solid fa-clock-rotate-left scale-75 ${shiftColor} opacity-75"></i>
+                                <span class="${shiftColor} fw-bold" style="font-size: 0.75rem;">${a.shift}</span>
+                            </div>
+                        </td>
+                        <td class="px-3">
+                            <span class="badge ${a.status === 'On Duty' ? 'bg-success' : 'bg-secondary'} bg-opacity-10 ${a.status === 'On Duty' ? 'text-success' : 'text-white-50'} rounded-pill px-2 py-1" style="font-size: 0.65rem;">${a.status}</span>
+                        </td>
+                        <td class="px-3 text-end pe-4">
+                            <button class="btn btn-sm btn-outline-danger border-0 opacity-50" onclick="deleteAst(${a.id})"><i class="fa-solid fa-trash"></i></button>
+                        </td>
+                    </tr>
+                `;
+            });
+        }
+
+        function deleteAst(id) {
+            assistants = assistants.filter(a => a.id !== id);
+            localStorage.setItem('mc_clinic_assistants', JSON.stringify(assistants));
+            refreshList();
+            showGlow('Staff Record Removed');
+        }
+
+        document.getElementById('astForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const newAst = {
+                id: Date.now(),
+                name: document.getElementById('astN').value,
+                user: document.getElementById('astU').value,
+                dept: document.getElementById('astD').value,
+                shift: document.getElementById('astS').value,
+                status: 'On Duty'
+            };
+            assistants.push(newAst);
+            localStorage.setItem('mc_clinic_assistants', JSON.stringify(assistants));
+            e.target.reset();
+            refreshList();
+            showGlow('Personnel Registered Successfully!');
+        });
+
+        refreshList();
+    </script>
+</body>
+</html>

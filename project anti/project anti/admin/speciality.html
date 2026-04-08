@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specialty Management - MediCare Clinic</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <!-- Unified Sidebar (Synced) -->
+                        <div class="sidebar">
+            <div class="sidebar-brand d-flex align-items-center mb-4 pb-3 border-bottom border-secondary border-opacity-25">
+                <div class="clinic-logo-box me-2"><i class="fa-solid fa-heart-pulse"></i></div>
+                <div><h5 class="mb-0 text-white fw-bold">MediCare Clinic</h5><small class="text-white-50 opacity-75">Admin Panel</small></div>
+            </div>
+            <a href="../index.html" class="sidebar-link"><i class="fa-solid fa-desktop"></i> HOME</a>
+            <a href="login.html" class="sidebar-link"><i class="fa-solid fa-right-to-bracket"></i> LOG IN</a>
+            <div class="nav-title">ADMIN MENU</div>
+            <a href="dashboard.html" class="sidebar-link"><i class="fa-solid fa-chart-pie"></i> Admin Dashboard</a>
+            <a href="staff.html" class="sidebar-link"><i class="fa-solid fa-user-doctor"></i> Staff Management</a>
+            <a href="serv_spec.html" class="sidebar-link active"><i class="fa-solid fa-hand-holding-medical"></i> Services & Specialties</a>
+            <a href="patient.html" class="sidebar-link"><i class="fa-solid fa-hospital-user"></i> Patients & Visits</a>
+            <a href="financ.html" class="sidebar-link"><i class="fa-solid fa-money-bill-trend-up"></i> Financial Management</a>
+            <a href="system.html" class="sidebar-link"><i class="fa-solid fa-gears"></i> System Settings</a>
+        </div>
+
+        <!-- Main Content Wrapper -->
+        <div class="main-content text-white">
+            <!-- Premium Header -->
+            <div class="dashboard-header fade-up align-items-center mb-5">
+                <div class="header-title">
+                    <h4 class="fw-800 text-white text-uppercase ls-2">Medical Specialties</h4>
+                    <p class="text-secondary mb-0">Configure and audit clinic departments and focus areas</p>
+                </div>
+                <div class="header-actions">
+                    <a href="serv_spec.html" class="action-item glass-card rounded-pill text-decoration-none">
+                        <i class="fa-solid fa-arrow-left text-cyan"></i>
+                        <span>Exit Hub</span>
+                    </a>
+                    <div class="avatar shadow-sm">M</div>
+                </div>
+            </div>
+
+            <!-- 1. Registration Section -->
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-12">
+                    <div class="dash-card border-start border-primary border-4 fade-up">
+                        <h5 class="text-white fw-800 mb-4 d-flex align-items-center">
+                            <i class="fa-solid fa-folder-plus me-3 text-primary"></i> Create New Specialty Area
+                        </h5>
+                        <form id="specForm">
+                            <div class="row g-4 mb-4">
+                                <div class="col-md-4">
+                                    <label class="smaller text-muted text-uppercase fw-800 mb-2 d-block">Specialty Title</label>
+                                    <input type="text" id="specT" class="form-control custom-input py-2 px-3" placeholder="e.g. Neurology" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="smaller text-muted text-uppercase fw-800 mb-2 d-block">Department Head</label>
+                                    <input type="text" id="specH" class="form-control custom-input py-2 px-3" placeholder="Dr. Sarah Johnson" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="smaller text-muted text-uppercase fw-800 mb-2 d-block">Unit Category</label>
+                                    <select id="specC" class="form-select custom-input py-2 px-3">
+                                        <option selected>Diagnostic</option>
+                                        <option>Surgical</option>
+                                        <option>Therapeutic</option>
+                                        <option>Consultative</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-end mt-2">
+                                <button type="submit" class="btn btn-primary px-5 py-2 fw-800 rounded-pill shadow-sm border-0" style="background: linear-gradient(135deg, #0ea5e9, #2563eb);">Add Specialty</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Directory Section -->
+            <div class="row justify-content-center pb-5">
+                <div class="col-lg-12">
+                    <div class="dash-card fade-up delay-1 p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-4 pb-2 border-bottom border-secondary border-opacity-10">
+                            <h5 class="text-white fw-800 mb-0"><i class="fa-solid fa-layer-group text-cyan me-2"></i> DEPARTMENT DIRECTORY</h5>
+                            <div class="badge bg-cyan bg-opacity-10 text-cyan rounded-pill px-3 py-1 fw-800" style="font-size: 0.65rem;">Hierarchy: Active</div>
+                        </div>
+
+                        <div class="filter-panel d-flex justify-content-between align-items-center mb-4 p-4 rounded-4" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);">
+                            <div class="d-flex align-items-center gap-3">
+                                <label class="smaller text-muted text-uppercase fw-800 ls-1">Live Search</label>
+                                <div class="input-group" style="width: 300px;">
+                                    <span class="input-group-text bg-transparent border-secondary border-opacity-20 text-muted border-end-0 rounded-start-pill ps-3"><i class="fa-solid fa-magnifying-glass scale-90"></i></span>
+                                    <input type="text" id="specSearch" class="form-control custom-input border-start-0 rounded-end-pill py-2" placeholder="Search by area or head..." onkeyup="refreshList()">
+                                </div>
+                            </div>
+                            <button class="btn btn-outline-secondary btn-sm px-4 rounded-pill border-opacity-20 text-white-50" onclick="document.getElementById('specSearch').value=''; refreshList();">RESET</button>
+                        </div>
+
+                        <div class="table-responsive custom-scrollbar">
+                            <table class="table table-dark table-hover border-secondary border-opacity-10 align-middle">
+                                <thead class="text-white-50 small letter-spacing-1 border-bottom border-secondary border-opacity-25">
+                                    <tr>
+                                        <th class="py-3 px-3 fw-normal">SPECIALTY AREA</th>
+                                        <th class="py-3 px-3 fw-normal">DEPARTMENT HEAD</th>
+                                        <th class="py-3 px-3 fw-normal">CATEGORY</th>
+                                        <th class="py-3 px-3 fw-normal">SYSTEM LOAD</th>
+                                        <th class="py-3 px-3 fw-normal text-end pe-4">ACTION</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="specListBody" class="small">
+                                    <!-- Dynamic Rows -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="toast" class="toast-glow"></div>
+        </div>
+    </div>
+
+    <script>
+        let specs = JSON.parse(localStorage.getItem('mc_clinic_specialties')) || [
+            { id: 301, title: 'Cardiology', head: 'Dr. James Miller', cat: 'Diagnostic', load: 'High' },
+            { id: 302, title: 'Pediatrics', head: 'Dr. Emma Wilson', cat: 'Consultative', load: 'Medium' }
+        ];
+
+        function showGlow(m) { const t=document.getElementById('toast'); t.innerText=m; t.style.display='block'; setTimeout(()=>t.style.display='none', 2000); }
+
+        function refreshList() {
+            const body = document.getElementById('specListBody');
+            const search = document.getElementById('specSearch').value.toLowerCase();
+            const filtered = specs.filter(s => s.title.toLowerCase().includes(search) || s.head.toLowerCase().includes(search));
+            
+            body.innerHTML = filtered.length ? '' : '<tr><td colspan="5" class="text-center py-5 opacity-25">No specialty areas matched your search</td></tr>';
+            
+            filtered.forEach(s => {
+                body.innerHTML += `
+                    <tr>
+                        <td class="px-3 text-white fw-bold">${s.title}</td>
+                        <td class="px-3 text-white-50">${s.head}</td>
+                        <td class="px-3">
+                            <span class="badge bg-secondary bg-opacity-20 text-info fw-normal rounded-pill px-2" style="font-size: 0.65rem;">${s.cat}</span>
+                        </td>
+                        <td class="px-3">
+                            <div class="d-flex align-items-center gap-2">
+                                <div class="progress flex-grow-1" style="height: 4px; background: rgba(255,255,255,0.05); width: 80px;">
+                                    <div class="progress-bar ${s.load === 'High' ? 'bg-danger' : 'bg-success'}" style="width: ${s.load === 'High' ? '85%' : '45%'}"></div>
+                                </div>
+                                <span class="smaller ${s.load === 'High' ? 'text-danger' : 'text-success'}">${s.load}</span>
+                            </div>
+                        </td>
+                        <td class="px-3 text-end pe-4">
+                            <button class="btn btn-sm btn-outline-danger border-0 opacity-50" onclick="deleteSpec(${s.id})"><i class="fa-solid fa-trash"></i></button>
+                        </td>
+                    </tr>
+                `;
+            });
+        }
+
+        function deleteSpec(id) {
+            specs = specs.filter(s => s.id !== id);
+            localStorage.setItem('mc_clinic_specialties', JSON.stringify(specs));
+            refreshList();
+            showGlow('Specialty Area Decoupled');
+        }
+
+        document.getElementById('specForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const newSpec = {
+                id: Date.now(),
+                title: document.getElementById('specT').value,
+                head: document.getElementById('specH').value,
+                cat: document.getElementById('specC').value,
+                load: 'Medium'
+            };
+            specs.push(newSpec);
+            localStorage.setItem('mc_clinic_specialties', JSON.stringify(specs));
+            e.target.reset();
+            refreshList();
+            showGlow('New Specialty Area Commissioned');
+        });
+
+        refreshList();
+    </script>
+</body>
+</html>

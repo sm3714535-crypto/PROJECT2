@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Patient - MediCare Clinic</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="doctor.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <nav class="sidebar border-end border-secondary border-opacity-25">
+        <div
+            class="sidebar-header d-flex align-items-center mb-4 pb-3 border-bottom border-secondary border-opacity-25">
+            <div class="clinic-logo-box me-3">
+                <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+            <div>
+                <h5 class="mb-0 text-white fw-bold">MediCare Clinic</h5>
+                <small class="text-info opacity-75">Doctor Portal</small>
+            </div>
+        </div>
+
+        <ul class="nav flex-column mb-auto">
+            <li class="nav-item mb-2">
+                <a href="../index.html" class="nav-link text-white-50 px-3">
+                    <i class="fa-solid fa-house me-3 w-20px text-center"></i>
+                    HOME
+                </a>
+            </li>
+            <li class="nav-item mb-2">
+                <a href="../login.html" class="nav-link text-white-50 px-3">
+                    <i class="fa-regular fa-user me-3 w-20px text-center"></i>
+                    LOG IN
+                </a>
+            </li>
+
+            <li class="nav-item mb-2">
+                <div class="text-uppercase text-secondary small fw-bold px-3 mb-2"
+                    style="font-size: 0.7rem; letter-spacing: 1px;">Doctor Menu</div>
+                <a href="dashboard.html" class="nav-link text-white-50 px-3 d-flex align-items-center mb-2">
+                    <i class="fa-solid fa-border-none me-3 w-20px text-center"></i>
+                    Main Dashboard
+                </a>
+                <a href="patient.html"
+                    class="nav-link active text-dark bg-info rounded-3 px-3 fw-medium d-flex align-items-center mb-2">
+                    <i class="fa-solid fa-user-group me-3 w-20px text-center"></i>
+                    Patients Management
+                </a>
+                <a href="visits.html" class="nav-link text-white-50 px-3 d-flex align-items-center mb-2">
+                    <i class="fa-regular fa-calendar-check me-3 w-20px text-center"></i>
+                    Visits Management
+                </a>
+                <a href="settings.html" class="nav-link text-white-50 px-3 d-flex align-items-center">
+                    <i class="fa-solid fa-gear me-3 w-20px text-center"></i>
+                    Account Settings
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="top-header d-flex justify-content-between align-items-center mb-4">
+            <div class="d-flex align-items-center gap-3">
+                <a href="patient.html"
+                    class="btn btn-outline-secondary btn-sm rounded-pill text-white border-opacity-25">
+                    <i class="fa-solid fa-arrow-left"></i> Back
+                </a>
+                <div>
+                    <h2 class="h4 text-white fw-bold mb-1">ADD NEW PATIENT</h2>
+                    <div class="text-white-50 small">Register a new patient to your assigned list</div>
+                </div>
+            </div>
+            <div class="header-actions d-flex align-items-center gap-3">
+                <div
+                    class="weather-widget rounded-pill px-3 py-2 border border-secondary border-opacity-50 text-white-50 d-flex align-items-center gap-2 small">
+                    <i class="fa-solid fa-cloud"></i>
+                    <span>23&deg;C</span>
+                </div>
+                <button
+                    class="lang-btn btn btn-outline-secondary rounded-pill text-white py-1 px-3 d-flex align-items-center gap-2 border-opacity-50">
+                    <i class="fa-solid fa-globe"></i>
+                    <span>عربي</span>
+                </button>
+                <a href="settings.html"
+                    class="profile-avatar text-decoration-none bg-info text-dark rounded-circle fw-bold d-flex align-items-center justify-content-center"
+                    style="width: 40px; height: 40px;">
+                    A
+                </a>
+            </div>
+        </header>
+
+        <!-- Dynamic Content Area -->
+        <div class="content-wrapper">
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <!-- Registration Form -->
+                    <div class="bg-card p-5 rounded-4 border-0 shadow-lg"
+                        style="background: linear-gradient(145deg, #0f172a, #1e293b);">
+                        <div class="d-flex align-items-center gap-3 mb-5">
+                            <div class="bg-info bg-opacity-10 text-info rounded-circle d-flex align-items-center justify-content-center border border-info border-opacity-25"
+                                style="width: 60px; height: 60px;">
+                                <i class="fa-solid fa-user-plus fs-4"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-white fw-bold mb-1">Patient Details</h5>
+                                <small class="text-white-50">Please fill in all the required information
+                                    accurately.</small>
+                            </div>
+                        </div>
+
+                        <form>
+                            <div class="row g-4">
+                                <!-- Full Name -->
+                                <div class="col-md-6">
+                                    <label class="text-white-50 small mb-2 d-block fw-semibold">Full Name <span
+                                            class="text-danger">*</span></label>
+                                    <div class="search-input d-flex align-items-center bg-dark border border-secondary border-opacity-25 rounded-3 px-3 py-2"
+                                        style="background-color: #0d1e3a !important;">
+                                        <i class="fa-regular fa-user text-muted me-2"></i>
+                                        <input type="text"
+                                            class="form-control bg-transparent border-0 text-white shadow-none px-0"
+                                            placeholder="e.g. Layla Ahmed">
+                                    </div>
+                                </div>
+
+                                <!-- Phone Number -->
+                                <div class="col-md-6">
+                                    <label class="text-white-50 small mb-2 d-block fw-semibold">Phone Number <span
+                                            class="text-danger">*</span></label>
+                                    <div class="search-input d-flex align-items-center bg-dark border border-secondary border-opacity-25 rounded-3 px-3 py-2"
+                                        style="background-color: #0d1e3a !important;">
+                                        <i class="fa-solid fa-phone text-muted me-2"></i>
+                                        <input type="text"
+                                            class="form-control bg-transparent border-0 text-white shadow-none px-0"
+                                            placeholder="01X XXXX XXXX">
+                                    </div>
+                                </div>
+
+                                <!-- Date of Birth -->
+                                <div class="col-md-6">
+                                    <label class="text-white-50 small mb-2 d-block fw-semibold">Date of Birth</label>
+                                    <div class="search-input d-flex align-items-center bg-dark border border-secondary border-opacity-25 rounded-3 px-3 py-2"
+                                        style="background-color: #0d1e3a !important;">
+                                        <i class="fa-regular fa-calendar text-muted me-2"></i>
+                                        <input type="date"
+                                            class="form-control bg-transparent border-0 text-white-50 shadow-none px-0">
+                                    </div>
+                                </div>
+
+                                <!-- Gender -->
+                                <div class="col-md-6">
+                                    <label class="text-white-50 small mb-2 d-block fw-semibold">Gender</label>
+                                    <select
+                                        class="form-select custom-input border-secondary border-opacity-25 text-white-50 rounded-3 px-3 py-2"
+                                        style="background-color: #0d1e3a !important;">
+                                        <option selected disabled>Select Gender</option>
+                                        <option>Male</option>
+                                        <option>Female</option>
+                                    </select>
+                                </div>
+
+                                <!-- National ID -->
+                                <div class="col-md-6">
+                                    <label class="text-white-50 small mb-2 d-block fw-semibold">National ID /
+                                        Passport</label>
+                                    <div class="search-input d-flex align-items-center bg-dark border border-secondary border-opacity-25 rounded-3 px-3 py-2"
+                                        style="background-color: #0d1e3a !important;">
+                                        <i class="fa-regular fa-id-card text-muted me-2"></i>
+                                        <input type="text"
+                                            class="form-control bg-transparent border-0 text-white shadow-none px-0"
+                                            placeholder="Enter ID number">
+                                    </div>
+                                </div>
+
+                                <!-- Blood Type -->
+                                <div class="col-md-6">
+                                    <label class="text-white-50 small mb-2 d-block fw-semibold">Blood Type</label>
+                                    <select
+                                        class="form-select custom-input border-secondary border-opacity-25 text-white-50 rounded-3 px-3 py-2"
+                                        style="background-color: #0d1e3a !important;">
+                                        <option selected disabled>Select Blood Type</option>
+                                        <option>A+</option>
+                                        <option>A-</option>
+                                        <option>B+</option>
+                                        <option>B-</option>
+                                        <option>O+</option>
+                                        <option>O-</option>
+                                        <option>AB+</option>
+                                        <option>AB-</option>
+                                    </select>
+                                </div>
+
+                                <!-- Initial Notes / Allergies -->
+                                <div class="col-12">
+                                    <label class="text-white-50 small mb-2 d-block fw-semibold">Initial Notes /
+                                        Allergies</label>
+                                    <div class="search-input d-flex align-items-start bg-dark border border-secondary border-opacity-25 rounded-3 px-3 py-2"
+                                        style="background-color: #0d1e3a !important;">
+                                        <i class="fa-solid fa-notes-medical text-muted me-2 mt-1"></i>
+                                        <textarea
+                                            class="form-control bg-transparent border-0 text-white shadow-none px-0"
+                                            rows="3"
+                                            placeholder="Enter any allergies or important medical history..."></textarea>
+                                    </div>
+                                </div>
+
+                                <!-- Actions -->
+                                <div class="col-12 mt-5">
+                                    <hr class="border-secondary border-opacity-25 mb-4">
+                                    <div class="d-flex gap-3 justify-content-end">
+                                        <a href="patient.html"
+                                            class="btn btn-outline-secondary rounded-pill px-5 py-2 fw-medium border-opacity-50 text-white-50">Cancel</a>
+                                        <button type="submit"
+                                            class="btn btn-info rounded-pill px-5 py-2 fw-bold text-dark d-flex align-items-center gap-2">
+                                            <i class="fa-solid fa-check"></i> Save Patient
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="doctor.js"></script>
+</body>
+
+</html>

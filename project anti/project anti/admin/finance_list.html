@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expenses List - MediCare Clinic</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <!-- Unified Sidebar (Synced) -->
+                        <div class="sidebar">
+            <div class="sidebar-brand d-flex align-items-center mb-4 pb-3 border-bottom border-secondary border-opacity-25">
+                <div class="clinic-logo-box me-2"><i class="fa-solid fa-heart-pulse"></i></div>
+                <div><h5 class="mb-0 text-white fw-bold">MediCare Clinic</h5><small class="text-white-50 opacity-75">Admin Panel</small></div>
+            </div>
+            <a href="../index.html" class="sidebar-link"><i class="fa-solid fa-desktop"></i> HOME</a>
+            <a href="login.html" class="sidebar-link"><i class="fa-solid fa-right-to-bracket"></i> LOG IN</a>
+            <div class="nav-title">ADMIN MENU</div>
+            <a href="dashboard.html" class="sidebar-link"><i class="fa-solid fa-chart-pie"></i> Admin Dashboard</a>
+            <a href="staff.html" class="sidebar-link"><i class="fa-solid fa-user-doctor"></i> Staff Management</a>
+            <a href="serv_spec.html" class="sidebar-link"><i class="fa-solid fa-hand-holding-medical"></i> Services & Specialties</a>
+            <a href="patient.html" class="sidebar-link"><i class="fa-solid fa-hospital-user"></i> Patients & Visits</a>
+            <a href="financ.html" class="sidebar-link active"><i class="fa-solid fa-money-bill-trend-up"></i> Financial Management</a>
+            <a href="system.html" class="sidebar-link"><i class="fa-solid fa-gears"></i> System Settings</a>
+        </div>
+
+        <!-- Main Content Wrapper (Synced) -->
+        <div class="main-content text-white">
+            <!-- Premium Header (Synced) -->
+            <div class="dashboard-header fade-up align-items-center">
+                <div class="header-title">
+                    <h4 class="fw-800 text-white text-uppercase ls-2">EXPENSES LEDGER</h4>
+                    <p class="text-secondary mb-0">Clinic-wide operational and financial overview</p>
+                </div>
+                <div class="header-actions">
+                    <a href="financ.html" class="action-item glass-card rounded-pill text-decoration-none">
+                        <i class="fa-solid fa-arrow-left text-cyan"></i>
+                        <span>Exit Hub</span>
+                    </a>
+                    <div class="avatar shadow-sm">M</div>
+                </div>
+            </div>
+
+            <div class="dash-card fade-up mt-5 p-4">
+                <div class="d-flex justify-content-between align-items-center mb-4 pb-2 border-bottom border-secondary border-opacity-10">
+                    <h5 class="text-white fw-800 mb-0"><i class="fa-solid fa-receipt text-cyan me-2"></i> ALL EXPENSES</h5>
+                    <div class="badge bg-cyan bg-opacity-10 text-cyan rounded-pill px-3 py-1 fw-800" style="font-size: 0.65rem;">System Records: Live</div>
+                </div>
+
+                <div class="filter-panel d-flex flex-wrap gap-3 align-items-end mb-4 p-4 rounded-4" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);">
+                    <div class="flex-grow-1">
+                        <label class="smaller text-muted text-uppercase fw-800 mb-2 d-block ls-1">Filter By Type</label>
+                        <select id="fType" class="form-select custom-input py-2" onchange="refreshHub()">
+                            <option value="all">Every Category</option>
+                            <option value="General">General</option>
+                            <option value="Specialty">Specialty</option>
+                        </select>
+                    </div>
+                    <div class="flex-grow-1">
+                        <label class="smaller text-muted text-uppercase fw-800 mb-2 d-block ls-1">Filter By Specialty</label>
+                        <select id="fSpec" class="form-select custom-input py-2" onchange="refreshHub()">
+                            <option value="all">All Specialties</option>
+                        </select>
+                    </div>
+                    <div class="flex-grow-1">
+                        <label class="smaller text-muted text-uppercase fw-800 mb-2 d-block ls-1">Filter By Date</label>
+                        <input type="date" id="fDate" class="form-control custom-input py-2" onchange="refreshHub()">
+                    </div>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-outline-secondary btn-sm px-4 rounded-pill border-opacity-20 text-white-50" onclick="resetUIFilters()">CLEAR ALL</button>
+                        <button class="btn btn-cyan btn-sm px-4 rounded-pill" onclick="window.print()"><i class="fa-solid fa-print me-2"></i> PRINT</button>
+                    </div>
+                </div>
+
+                <div class="table-responsive custom-scrollbar" style="max-height: calc(100vh - 430px);">
+                    <table class="table table-dark table-hover border-secondary border-opacity-10 align-middle">
+                        <thead class="text-white-50 small letter-spacing-1 border-bottom border-secondary border-opacity-25">
+                            <tr>
+                                <th class="py-3 px-3 fw-normal">TITLE / DESCRIPTION</th>
+                                <th class="py-3 px-3 fw-normal">AMOUNT (USD)</th>
+                                <th class="py-3 px-3 fw-normal">DATE</th>
+                                <th class="py-3 px-3 fw-normal">TYPE</th>
+                                <th class="py-3 px-3 fw-normal">SPL. TARGET</th>
+                                <th class="py-3 px-3 fw-normal text-end pe-4">ACTION</th>
+                            </tr>
+                        </thead>
+                        <tbody id="expTBody" class="small"></tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div id="toast" class="toast-glow"></div>
+        </div>
+    </div>
+
+    <script>
+        let state = JSON.parse(localStorage.getItem('mc_adv_finance')) || { expenses: [], income: [] };
+        const fmt = (v) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(v);
+        function resetUIFilters() { document.getElementById('fType').value='all'; document.getElementById('fSpec').value='all'; document.getElementById('fDate').value=''; refreshHub(); }
+        function delRow(id) { state.expenses = state.expenses.filter(e => e.id !== id); localStorage.setItem('mc_adv_finance', JSON.stringify(state)); refreshHub(); }
+
+        function refreshHub() {
+            const body = document.getElementById('expTBody');
+            const fT = document.getElementById('fType').value;
+            const fS = document.getElementById('fSpec').value;
+            const fD = document.getElementById('fDate').value;
+            const filtered = state.expenses.filter(e => (fT==='all' || e.type===fT) && (fS==='all' || e.specialty===fS) && (!fD || e.date===fD));
+            body.innerHTML = filtered.length ? '' : '<tr><td colspan="6" class="text-center py-5 opacity-25">No matched records found</td></tr>';
+            filtered.forEach(e => {
+                body.innerHTML += `
+                    <tr>
+                        <td class="px-3"><div class="text-white fw-bold mb-0 text-truncate" style="max-width: 250px;">${e.title}</div><small class="text-white-50" style="font-size: 0.7rem;">ID: ${e.id}</small></td>
+                        <td class="px-3 fw-bold text-white">${fmt(e.amount)}</td>
+                        <td class="px-3 text-white-50">${e.date}</td>
+                        <td class="px-3"><span class="badge ${e.type === 'General' ? 'bg-secondary' : 'bg-primary'} bg-opacity-20 text-info fw-normal rounded-pill px-2" style="font-size: 0.65rem;">${e.type}</span></td>
+                        <td class="px-3">${e.specialty ? `<span class="badge bg-secondary bg-opacity-20 text-info fw-normal rounded-pill px-2" style="font-size: 0.65rem;">${e.specialty}</span>` : '--'}</td>
+                        <td class="px-3 text-end"><button class="btn btn-sm btn-outline-danger border-0 opacity-50" onclick="delRow(${e.id})"><i class="fa-solid fa-trash"></i></button></td>
+                    </tr>
+                `;
+            });
+            const allSpecs = [...new Set([...state.expenses.map(e=>e.specialty), ...state.income.map(i=>i.specialty)])].filter(x=>x);
+            const sel = document.getElementById('fSpec'); const curV = sel.value;
+            sel.innerHTML = '<option value="all">All Specialties</option>';
+            allSpecs.forEach(s => sel.innerHTML += `<option value="${s}">${s}</option>`);
+            sel.value = allSpecs.includes(curV) ? curV : 'all';
+        }
+        refreshHub();
+    </script>
+</body>
+</html>

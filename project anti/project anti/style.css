@@ -1,0 +1,280 @@
+/* Color Palette for Dark Theme */
+:root {
+    --heading-color: #ffffff;
+    --text-color: #a0aab2;
+    --primary-blue: #0d6efd;
+    --cyan-accent: #0dcaf0; /* Similar to the login button */
+    --border-color: #2b2b3a;
+    --global-bg: #0d121c; /* Very Dark Blue match from image */
+    --card-bg: #131a28; /* Slightly lighter for cards/inputs */
+    --header-bg: rgba(13, 18, 28, 0.95);
+}
+
+body {
+    background-color: var(--global-bg);
+    color: var(--text-color);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
+}
+
+/* Header */
+.header-bg {
+    background-color: var(--header-bg) !important;
+    backdrop-filter: blur(10px);
+}
+
+.header-border {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.site-footer {
+    border-top: 1px solid var(--border-color);
+    background-color: var(--global-bg) !important;
+}
+
+.navbar-brand {
+    color: var(--heading-color) !important;
+}
+
+/* Unified Clinic Logo */
+.clinic-logo-box {
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, #2dd4bf 0%, #0ea5e9 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #080c13; /* Dark icon to match image */
+    box-shadow: 0 4px 12px rgba(45, 212, 191, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-shrink: 0;
+}
+
+.clinic-logo-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(45, 212, 191, 0.3);
+}
+
+.clinic-logo-box i {
+    font-size: 1.3rem;
+}
+
+.nav-link {
+    color: #e0e0e0 !important;
+    text-decoration: none;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.nav-link:hover {
+    color: var(--primary-blue) !important;
+    transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero-heading {
+    font-size: 3.5rem;
+    line-height: 1.2;
+}
+
+.hero-subheading {
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.hero-img {
+    max-height: 500px;
+    object-fit: cover;
+    border: 1px solid rgba(255,255,255,0.05); /* Subtle border for popped effect */
+}
+
+/* Custom Animations */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+.floating-img {
+    animation: float 6s ease-in-out infinite;
+}
+
+.hover-scale {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+.btn-get-started {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+    color: #ffffff;
+    border-radius: 50px;
+    font-weight: 500;
+}
+
+.btn-get-started:hover {
+    box-shadow: 0 0 15px rgba(13, 110, 253, 0.6);
+}
+
+.btn-learn-more {
+    color: var(--primary-blue);
+    border-color: var(--primary-blue);
+    background-color: transparent;
+    border-radius: 50px;
+    font-weight: 500;
+}
+
+.btn-learn-more:hover {
+    background-color: var(--primary-blue);
+    color: #ffffff;
+}
+
+/* Feature Cards */
+.feature-card {
+    background-color: var(--card-bg);
+    border-radius: 16px !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-12px);
+    background-color: #1a2336; 
+    box-shadow: 0 12px 30px rgba(13, 110, 253, 0.15); 
+}
+
+/* Inheriting link styles off card wrapper for links */
+a.text-decoration-none {
+    color: inherit;
+}
+a.text-decoration-none:hover .card-title {
+    color: var(--primary-blue);
+    transition: color 0.3s;
+}
+
+.card-icon {
+    color: var(--primary-blue);
+    font-size: 2.5rem;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover .card-icon {
+    transform: scale(1.15);
+}
+
+.card-title {
+    color: var(--heading-color);
+}
+
+.card-text {
+    color: var(--text-color);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* --- LOGIN PAGE STYLES --- */
+.login-icon-top {
+    background-color: var(--cyan-accent);
+    color: #12121a;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin: 0 auto;
+}
+
+.login-card {
+    background-color: var(--global-bg);
+    border: 1px solid rgba(13, 202, 240, 0.1);
+    box-shadow: 0 0 30px rgba(13, 202, 240, 0.05); /* Cyan subtle glow */
+    border-radius: 1rem;
+    width: 100%;
+    max-width: 420px;
+    padding: 2.5rem;
+    transition: box-shadow 0.3s ease;
+}
+
+.login-card:hover {
+    box-shadow: 0 0 40px rgba(13, 202, 240, 0.1); /* Glow intensifies on hover */
+}
+
+.custom-input {
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--border-color);
+    color: #ffffff !important;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-radius: 0.5rem;
+}
+
+.custom-input::placeholder {
+    color: #5c6778;
+}
+
+.custom-input:focus {
+    background-color: var(--card-bg) !important;
+    border-color: var(--cyan-accent);
+    box-shadow: 0 0 0 0.25rem rgba(13, 202, 240, 0.25);
+}
+
+.custom-input-icon {
+    color: #5c6778;
+}
+
+.custom-input:focus ~ .custom-input-icon, 
+.position-relative:focus-within .custom-input-icon {
+    color: var(--cyan-accent);
+}
+
+.btn-cyan {
+    background-color: var(--cyan-accent);
+    border-color: var(--cyan-accent);
+    color: #12121a;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(13, 202, 240, 0.4);
+}
+
+.btn-cyan:hover {
+    background-color: #0bb5d8;
+    border-color: #0bb5d8;
+    color: #12121a;
+    box-shadow: 0 6px 20px rgba(13, 202, 240, 0.6);
+    transform: translateY(-2px);
+}
+
+.text-cyan {
+    color: var(--cyan-accent);
+}
+
+.text-cyan:hover {
+    color: #0bb5d8;
+}
+
+.hover-text-cyan:hover {
+    color: var(--cyan-accent) !important;
+    transition: color 0.2s;
+}
+
+.demo-box {
+    background-color: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.details-list li {
+    margin-bottom: 0.25rem;
+}

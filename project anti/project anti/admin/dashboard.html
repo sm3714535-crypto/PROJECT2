@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - MediCare Clinic</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Global Custom CSS -->
+    <link rel="stylesheet" href="../style.css">
+    <!-- Dashboard Specific CSS -->
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar -->
+                        <div class="sidebar">
+            <div class="sidebar-brand d-flex align-items-center mb-4 pb-3 border-bottom border-secondary border-opacity-25">
+                <div class="clinic-logo-box me-2"><i class="fa-solid fa-heart-pulse"></i></div>
+                <div><h5 class="mb-0 text-white fw-bold">MediCare Clinic</h5><small class="text-white-50 opacity-75">Admin Panel</small></div>
+            </div>
+            <a href="../index.html" class="sidebar-link"><i class="fa-solid fa-desktop"></i> HOME</a>
+            <a href="login.html" class="sidebar-link"><i class="fa-solid fa-right-to-bracket"></i> LOG IN</a>
+            <div class="nav-title">ADMIN MENU</div>
+            <a href="dashboard.html" class="sidebar-link active"><i class="fa-solid fa-chart-pie"></i> Admin Dashboard</a>
+            <a href="staff.html" class="sidebar-link"><i class="fa-solid fa-user-doctor"></i> Staff Management</a>
+            <a href="serv_spec.html" class="sidebar-link"><i class="fa-solid fa-hand-holding-medical"></i> Services & Specialties</a>
+            <a href="patient.html" class="sidebar-link"><i class="fa-solid fa-hospital-user"></i> Patients & Visits</a>
+            <a href="financ.html" class="sidebar-link"><i class="fa-solid fa-money-bill-trend-up"></i> Financial Management</a>
+            <a href="system.html" class="sidebar-link"><i class="fa-solid fa-gears"></i> System Settings</a>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content text-white">
+            <!-- Premium Header -->
+            <div class="dashboard-header fade-up align-items-center">
+                <div class="header-title">
+                    <h4 class="fw-800 text-white text-uppercase ls-2">Admin Dashboard</h4>
+                    <p class="text-secondary mb-0">Clinic-wide operational and financial overview</p>
+                </div>
+                <div class="header-actions">
+                    <div class="action-item glass-card rounded-pill">
+                        <i class="fa-solid fa-cloud-sun text-warning"></i>
+                        <span>24°C Cairo</span>
+                    </div>
+                    <button class="btn btn-primary rounded-pill px-4 shadow-sm fw-bold border-0" style="background: linear-gradient(135deg, #0ea5e9, #6366f1);">
+                        <i class="fa-solid fa-file-invoice-dollar me-2"></i>Generate Report
+                    </button>
+                    <div class="avatar shadow-sm">M</div>
+                </div>
+            </div>
+
+            <!-- Financial KPIs (Synced with Finance Hub) -->
+            <div class="row g-4 mb-5">
+                <div class="col-xl-3 col-md-6">
+                    <div class="financial-card glass-card glow-income fade-up delay-1 h-100">
+                        <div class="d-flex justify-content-between mb-3 text-secondary">
+                            <span class="small fw-800 text-uppercase ls-1">Total Revenue</span>
+                            <i class="fa-solid fa-wallet text-cyan"></i>
+                        </div>
+                        <h2 class="text-white fw-800 mb-1">$142.5k</h2>
+                        <div class="mt-2 small text-success fw-600">
+                            <i class="fa-solid fa-circle-arrow-up"></i> 12.5% <span class="text-secondary font-weight-normal ms-1">vs last month</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="financial-card glass-card glow-expense fade-up delay-2 h-100">
+                        <div class="d-flex justify-content-between mb-3 text-secondary">
+                            <span class="small fw-800 text-uppercase ls-1">Monthly Expenses</span>
+                            <i class="fa-solid fa-credit-card text-danger"></i>
+                        </div>
+                        <h2 class="text-white fw-800 mb-1">$48.2k</h2>
+                        <div class="mt-2 small text-danger fw-600">
+                            <i class="fa-solid fa-circle-arrow-up"></i> 5.2% <span class="text-secondary font-weight-normal ms-1">vs last month</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="financial-card glass-card glow-profit fade-up delay-3 h-100">
+                        <div class="d-flex justify-content-between mb-3 text-secondary">
+                            <span class="small fw-800 text-uppercase ls-1">Net Profit</span>
+                            <i class="fa-solid fa-gem text-success"></i>
+                        </div>
+                        <h2 class="text-white fw-800 mb-1">$94.3k</h2>
+                        <div class="mt-2 small text-success fw-600">
+                            <i class="fa-solid fa-check-double"></i> Goal Reached <span class="text-secondary font-weight-normal ms-1">at 104%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="financial-card glass-card glow-growth fade-up delay-4 h-100">
+                        <div class="d-flex justify-content-between mb-3 text-secondary">
+                            <span class="small fw-800 text-uppercase ls-1">Projected Balance</span>
+                            <i class="fa-solid fa-building-columns text-primary"></i>
+                        </div>
+                        <h2 class="text-white fw-800 mb-1">$12.4k</h2>
+                        <div class="mt-2 small text-primary fw-600">
+                            <span class="text-secondary font-weight-normal">Q2 Forecast: </span> +18.5k
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analytics Hub -->
+            <div class="row g-4 mb-5">
+                <div class="col-lg-8">
+                    <div class="dash-card h-100 fade-up delay-3">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <div>
+                                <h6 class="text-white fw-bold mb-0">Financial Performance Analytics</h6>
+                                <p class="text-secondary smaller mb-0">Income vs Expenses historical trends</p>
+                            </div>
+                            <div class="btn-group">
+                                <button class="btn btn-outline-secondary btn-sm border-opacity-10 text-white-50 px-3 active">Quarterly</button>
+                                <button class="btn btn-outline-secondary btn-sm border-opacity-10 text-white-50 px-3">Yearly</button>
+                            </div>
+                        </div>
+                        <div class="chart-container" style="height: 350px;">
+                            <canvas id="incomeExpensesChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="dash-card h-100 fade-up delay-4">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h6 class="text-white fw-bold mb-0">Revenue by Specialty</h6>
+                            <i class="fa-solid fa-chart-simple text-secondary"></i>
+                        </div>
+                        <div class="chart-container" style="height: 350px;">
+                            <canvas id="serviceRevenueChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Highlights Table -->
+            <div class="dash-card p-4 fade-up delay-4">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h6 class="text-white mb-0 fw-bold">Recent System Transactions</h6>
+                    <button class="btn btn-sm btn-outline-secondary rounded-pill px-3 border-opacity-25 text-white-50">
+                        <i class="fa-solid fa-download me-2"></i>Export Summary
+                    </button>
+                </div>
+                <div class="table-responsive custom-scrollbar">
+                    <table class="table table-dark table-hover border-secondary border-opacity-10 align-middle mb-0">
+                        <thead class="text-white-50 small letter-spacing-1 border-bottom border-secondary border-opacity-25">
+                            <tr>
+                                <th class="py-3 px-3 fw-normal">DATE</th>
+                                <th class="py-3 px-3 fw-normal">PATIENT / DESCRIPTION</th>
+                                <th class="py-3 px-3 fw-normal">CATEGORY</th>
+                                <th class="py-3 px-2 fw-normal">AMOUNT</th>
+                                <th class="py-3 px-3 fw-normal">STATUS</th>
+                            </tr>
+                        </thead>
+                        <tbody class="small">
+                            <tr>
+                                <td class="px-3 py-3 small text-white-50">12 Apr 2026</td>
+                                <td class="px-3">
+                                    <div class="text-white fw-bold small mb-0 text-truncate" style="max-width: 180px;">Mohamed Ali</div>
+                                    <small class="text-white-50" style="font-size: 0.7rem;">Inv #2384-A</small>
+                                </td>
+                                <td class="px-3"><span class="badge bg-secondary bg-opacity-20 text-info fw-normal rounded-pill px-2" style="font-size: 0.65rem;">Cardiology</span></td>
+                                <td class="px-2 fw-bold text-white small">$1,250.00</td>
+                                <td class="px-3"><span class="badge bg-success bg-opacity-10 text-success rounded-pill px-2 py-1" style="font-size: 0.65rem;">Paid</span></td>
+                            </tr>
+                            <tr>
+                                <td class="px-3 py-3 small text-white-50">11 Apr 2026</td>
+                                <td class="px-3">
+                                    <div class="text-white fw-bold small mb-0 text-truncate" style="max-width: 180px;">Staff Salaries</div>
+                                    <small class="text-white-50" style="font-size: 0.7rem;">Voucher #992</small>
+                                </td>
+                                <td class="px-3"><span class="badge bg-secondary bg-opacity-20 text-danger fw-normal rounded-pill px-2" style="font-size: 0.65rem;">Payroll</span></td>
+                                <td class="px-2 fw-bold text-danger small">-$4,200.00</td>
+                                <td class="px-3"><span class="badge bg-warning bg-opacity-10 text-warning rounded-pill px-2 py-1" style="font-size: 0.65rem;">Processing</span></td>
+                            </tr>
+                            <tr>
+                                <td class="px-3 py-3 small text-white-50">10 Apr 2026</td>
+                                <td class="px-3">
+                                    <div class="text-white fw-bold small mb-0 text-truncate" style="max-width: 180px;">Medical Supplies Co.</div>
+                                    <small class="text-white-50" style="font-size: 0.7rem;">Inv #MS-482</small>
+                                </td>
+                                <td class="px-3"><span class="badge bg-secondary bg-opacity-20 text-info fw-normal rounded-pill px-2" style="font-size: 0.65rem;">Operations</span></td>
+                                <td class="px-2 fw-bold text-white small">$840.50</td>
+                                <td class="px-3"><span class="badge bg-success bg-opacity-10 text-success rounded-pill px-2 py-1" style="font-size: 0.65rem;">Paid</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js Engine -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom JS -->
+    <script src="admin.js"></script>
+</body>
+</html>
